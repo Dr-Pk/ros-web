@@ -7,6 +7,7 @@
 <script type="text/javascript" src="http://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
 <script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
 <script type="text/javascript" src="http://static.robotwebtools.org/ros2djs/current/ros2d.min.js"></script>
+ <link rel="stylesheet" href="styles.css">    
 
 <script type="text/javascript" type="text/javascript">
   /**
@@ -39,7 +40,20 @@
 </head>
 
 <body onload="init()">
+  
   <h1>Simple Map Example</h1>
-  <div id="map"></div>
+  <div style="background-color:Orange; height: 500px; width: 600px;" id="map" onclick="showCoords(event)"></div>
+  <div>
+    <h2>Coordonnées du click</h2>
+    <p id="click"></p>
+  </div>
+  <script>
+function showCoords(event) {
+  var x = event.clientX - 20;
+  var y = event.clientY - 100;
+  var coords = "X coords: " + x + ", Y coords: " + y;
+    document.getElementById("click").innerHTML = coords;
+}
+</script>
 </body>
 </html>
